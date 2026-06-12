@@ -1,0 +1,102 @@
+% !TEX program = xelatex
+
+\documentclass[bachelor,UTF8,hyperref,oneside]{Template/scuthesis}
+
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage{dirtree}
+\usepackage{textcomp}
+\renewcommand*{\DTstylecomment}{\color{blue}\kaishu}
+\usepackage{supertabular}
+\usepackage{makecell}
+\usepackage{ltxtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[draft]{changes}
+\usepackage[AutoFakeBold]{xeCJK}
+\usepackage{url}
+\def\UrlBreaks{\do/\do-}
+
+\usepackage[ruled,vlined,longend]{algorithm2e}
+\SetAlgoLongEnd
+\usepackage{listings}
+\usepackage{fontspec}
+\newfontfamily\consolas{Consolas}
+\definecolor{codegreen}{RGB}{0,128,0}
+\definecolor{codegray}{RGB}{120,120,120}
+\definecolor{codepurple}{RGB}{160,32,240}
+\definecolor{codeorange}{RGB}{200,120,0}
+\definecolor{backcolor}{RGB}{245,245,245}
+\lstset{
+    language=Python,
+    basicstyle=\consolas\fontsize{9pt}{11pt}\selectfont\color{black},
+    keywordstyle=\color{codegreen}\bfseries,
+    stringstyle=\color{codeorange},
+    commentstyle=\color{codegray}\itshape,
+    numberstyle=\color{codegray}\tiny,
+    backgroundcolor=\color{backcolor},
+    rulecolor=\color{codegray},
+    breaklines=true,
+    frame=single,
+    showstringspaces=false,
+    aboveskip=4pt,
+    belowskip=4pt,
+    lineskip=-1pt
+}
+\usepackage{tikz}
+\usetikzlibrary{positioning, fit}
+
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{amsmath}
+
+\begin{document}
+% 设置文档信息
+\title{【页眉和摘要上的毕设论文题目】}
+\ENGtitle{[English thesis title]}
+\CoverTitle{【封面上的毕设论文题目】}
+
+\author{【作者姓名】}
+\Stunumber{【作者学号】}
+\ENGauthor{[English name of the author]}
+\accomplishdate{【完成时间】}
+\collage{【学院名称】}
+\grade{【20xx级】}
+\supervisor{【指导教师姓名】}
+\ENGsupervisor{[English name of the supervisor]}
+\major{【专业名称】}
+\ENGmajor{[English name of your major]}
+
+\keywords{【中文关键词】}
+\ENGkeywords{[English keywords]}
+% 设置论文正文前的页码、页眉等
+\frontmatter\pagestyle{fancy}\makechaptertitlecenter
+% 自动制作标题
+\maketitle
+\include{Chapters/0_0_Abstract}
+% 自动制作目录
+\maketoc
+% 设置论文正文部分的页码、页眉等
+\mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitlecenter
+% 添加论文的各个章节，因为最终论文可能很长，把所有章节都写在一个文件里面会很长，用这种方法可以缩短篇幅，看起来更清楚
+\include{Chapters/1_Introduction}
+\include{Chapters/2_Related_Works}
+\include{Chapters/3_Method}
+\include{Chapters/4_Experiment}
+\include{Chapters/5_Result_Analysis}
+\include{Chapters/6_System_Design}
+\include{Chapters/7_Summary}
+% 设置论文正文后的式样
+\backmatter\makechaptertitlecenter
+% 按国标自动制作参考文献
+\begin{reference}
+    \bibliographystyle{Template/chinesebst}\bibliography{Reference}
+\end{reference}
+% 致谢
+\include{Chapters/8_Thanks}
+% 声明与版权使用授权书
+\include{Chapters/Combined_Authorization}
+% AI工具使用声明
+\include{Chapters/AI_Tool_Usage_Statement}
+\end{document}
