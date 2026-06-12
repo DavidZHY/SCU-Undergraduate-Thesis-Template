@@ -4,11 +4,11 @@
 
 ## 模板文件结构
 
-- `Chapters/`：包含论文各章节的源文件
-- `Images/`：包含论文中使用的图片
-- `Template/`：包含LaTeX模板文件，一般来说无需修改，只有下面[模板使用章节的第1步](README.md#L15)出现不一情况的时候才修改。
-- `Reference.bib/`：包含参考文献列表
-- `MainBody.tex`：主文档，用于编译整个论文，编译后的文档样式类似`MainBody.pdf`所示
+- `Chapters/`：包含论文各章节的源文件；
+- `Images/`：包含论文中使用的图片；
+- `Template/`：包含LaTeX模板文件，一般来说无需修改，只有下面[模板使用方法的第1步](README.md#L15)出现不一情况的时候才修改；
+- `Reference.bib/`：包含参考文献列表；
+- `MainBody.tex`：主文档，用于编译整个论文，编译后的文档样式类似`MainBody.pdf`所示。
 
 ## 模板使用方法
 
